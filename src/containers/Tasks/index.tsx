@@ -22,7 +22,7 @@ const mapDispatchToProps = (dispatch: AppDispatch) => {
 };
 
 const ConnectedList = connect(mapStateToProps, mapDispatchToProps)(List);
-console.log()
+
 const TasksList: React.FC = () => {
     const dispatch: AppDispatch = useDispatch();
     useEffect(() => {
