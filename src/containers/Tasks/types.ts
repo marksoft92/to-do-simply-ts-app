@@ -6,7 +6,7 @@ export interface TasksState {
 
 export interface Task {
     name: string;
-    description: number;
+    description: string;
     status: string;
 }
 

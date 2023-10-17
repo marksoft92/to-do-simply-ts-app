@@ -17,7 +17,12 @@ export const axiosInstance = axios.create({
 export const tasksSlice = createSlice({
     name: "tasks",
     initialState,
-    reducers: {},
+    reducers: {
+        addTask: (state, action) => {
+            state.list.push(action.payload);
+            localStorage.setItem("tasksData", JSON.stringify(state.list));
+        },
+    },
     extraReducers: (builder) => {
         builder
             .addCase(fetchTasks.pending, (state) => {
@@ -36,6 +41,7 @@ export const tasksSlice = createSlice({
     },
 });
 
+export const { addTask } = tasksSlice.actions;
 export const selectTasks = (state: RootState) => state.tasks.list;
 export const selectLoading = (state: RootState) => state.tasks.loading;
 
