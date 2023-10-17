@@ -6,7 +6,8 @@ export const fetchTasks = createAsyncThunk("tasks/fetch", async () => {
         const tasksData = localStorage.getItem("tasksData");
         if (tasksData) {
             const parseTasksData = JSON.parse(tasksData) as ApiResponse;
-            return [parseTasksData];
+
+            return parseTasksData;
         } else {
             return [];
         }

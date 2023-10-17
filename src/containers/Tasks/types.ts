@@ -11,5 +11,5 @@ export interface Task {
 }
 
 export interface ApiResponse {
-    tasks: Task[];
+    tasks: Task;
 }

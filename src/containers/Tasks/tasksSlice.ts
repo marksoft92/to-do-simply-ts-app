@@ -2,10 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
 import axios from "axios";
 import { fetchTasks } from "./fetchTasks";
-import { TasksState } from "./types";
+import { ApiResponse, TasksState } from "./types";
 
 const initialState: TasksState = {
-    list: [],
+    list: [] as ApiResponse[],
     loading: false,
     error: null,
 };
@@ -31,7 +31,7 @@ export const tasksSlice = createSlice({
             })
             .addCase(fetchTasks.fulfilled, (state, action) => {
                 state.loading = false;
-                state.list = action.payload;
+                state.list = state.list.concat(action.payload);
             })
             .addCase(fetchTasks.rejected, (state, action) => {
                 state.loading = false;
