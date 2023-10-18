@@ -1,12 +1,11 @@
 import { Task } from "../Task/task.types";
 
 export interface TasksState {
-  list: ApiResponse[];
+  list: Task[];
   loading: boolean;
   error: string | null;
 }
 
 export interface ApiResponse {
-  tasks: Task;
-  id: string;
+  tasks: Task[];
 }

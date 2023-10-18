@@ -2,10 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
 import axios from "axios";
 import { fetchTasks } from "./fetchTasks";
-import { ApiResponse, TasksState } from "./tasks.types";
+import { TasksState } from "./tasks.types";
 
 const initialState: TasksState = {
-  list: [] as ApiResponse[],
+  list: [],
   loading: false,
   error: null,
 };

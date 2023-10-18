@@ -1,12 +1,10 @@
 import React from "react";
 import { TaskCartProps } from "./task.props";
 
-const TaskCart: React.FC<TaskCartProps> = (props) => {
-  console.log("props", props);
-
+const TaskCart: React.FC<TaskCartProps> = ({ id, description, status }) => {
   return (
     <>
-      <div>"xx"</div>
+      <div>{description}</div>
     </>
   );
 };
