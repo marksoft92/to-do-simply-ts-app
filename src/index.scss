@@ -1,6 +1,9 @@
-//@import "./assets/styles.scss";
+@import "./assets/styles/TaskForm/index.scss";
+@import "./assets/styles/TaskForm/card.scss";
+@import "./assets/styles/components/buttons.scss";
 
 body {
+  background: gray;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",

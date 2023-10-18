@@ -7,7 +7,6 @@ import { fetchTasks } from "./fetchTasks";
 import List from "./list";
 
 const mapStateToProps = (state: RootState) => {
-  console.log(state);
   return {
     tasks: selectTasks(state),
     loading: selectLoading(state),
