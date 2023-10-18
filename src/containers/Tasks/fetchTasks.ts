@@ -1,11 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { ApiResponse } from "./tasks.types";
 
 export const fetchTasks = createAsyncThunk("tasks/fetch", async () => {
   try {
     const tasksData = localStorage.getItem("tasksData");
     if (tasksData) {
-      const parseTasksData = JSON.parse(tasksData) as ApiResponse;
+      const parseTasksData = JSON.parse(tasksData);
 
       return parseTasksData;
     } else {

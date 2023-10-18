@@ -1,13 +1,13 @@
 import React from "react";
 import NewTaskForm from "../Task/newTaskForm";
 import TaskCart from "../Task";
-import { TasksListProps } from "./tasks.props";
+import { ApiResponse } from "./tasks.types";
 
-const TasksList: React.FC<TasksListProps> = ({ tasks }) => {
+const TasksList: React.FC<ApiResponse> = ({ tasks }) => {
   return (
     <>
       {tasks.map((task) => (
-        <TaskCart key={task.id} {...task} />
+        <TaskCart {...task} />
       ))}
       <NewTaskForm />
     </>

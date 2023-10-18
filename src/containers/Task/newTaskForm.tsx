@@ -1,22 +1,38 @@
-import React from "react";
+import React, { ChangeEvent, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTask } from "../Tasks/tasksSlice";
 import { nanoid } from "@reduxjs/toolkit";
 
+const defaultValues = { status: false, description: "" };
+
 const NewTaskForm = () => {
   const dispatch = useDispatch();
+  const [values, setValues] = useState({
+    ...defaultValues,
+  });
 
-  const handleAddTask = () => {
-    const newTask = {
-      id: nanoid(),
-      description: "Opis nowego zadania",
-      status: false,
-    };
-
-    dispatch(addTask(newTask));
+  const handleTextChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
+    setValues({
+      ...values,
+      description: event.target.value,
+    });
   };
 
-  return <button onClick={handleAddTask}>Dodaj nowe zadanie</button>;
+  const handleAddTask = () => {
+    dispatch(addTask({ ...values, id: nanoid() }));
+    setValues(defaultValues);
+  };
+
+  return (
+    <>
+      <textarea
+        value={values.description}
+        onChange={handleTextChange}
+        placeholder="Wpisz tekst..."
+      />
+      <button onClick={handleAddTask}>Dodaj nowe zadanie</button>
+    </>
+  );
 };
 
 export default NewTaskForm;
