@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../../app/store";
-import axios from "axios";
 import { fetchTasks } from "./fetchTasks";
 import { TasksState } from "./tasks.types";
+import { sortTasksByStatus, updateLocalStorage } from "../../utils/helpers";
 
 const initialState: TasksState = {
   list: [],
@@ -10,17 +10,29 @@ const initialState: TasksState = {
   error: null,
 };
 
-export const axiosInstance = axios.create({
-  maxRedirects: 0,
-});
-
 export const tasksSlice = createSlice({
   name: "tasks",
   initialState,
   reducers: {
     addTask: (state, action) => {
       state.list.push(action.payload);
-      localStorage.setItem("tasksData", JSON.stringify(state.list));
+      updateLocalStorage(state);
+    },
+    markTaskAsCompleted: (state, action) => {
+      const taskId = action.payload;
+      const taskToMark = state.list.find((task) => task.id === taskId);
+
+      if (taskToMark) {
+        taskToMark.status = true;
+        console.log(state);
+        updateLocalStorage(state);
+      }
+    },
+    deleteTask: (state, action) => {
+      const taskId = action.payload;
+      const updatedList = state.list.filter((task) => task.id !== taskId);
+      state.list = updatedList;
+      updateLocalStorage(state);
     },
   },
   extraReducers: (builder) => {
@@ -31,7 +43,7 @@ export const tasksSlice = createSlice({
       })
       .addCase(fetchTasks.fulfilled, (state, action) => {
         state.loading = false;
-        state.list = state.list.concat(action.payload);
+        state.list = sortTasksByStatus(state.list.concat(action.payload));
       })
       .addCase(fetchTasks.rejected, (state, action) => {
         state.loading = false;
@@ -41,7 +53,7 @@ export const tasksSlice = createSlice({
   },
 });
 
-export const { addTask } = tasksSlice.actions;
+export const { addTask, markTaskAsCompleted, deleteTask } = tasksSlice.actions;
 export const selectTasks = (state: RootState) => state.tasks.list;
 export const selectLoading = (state: RootState) => state.tasks.loading;
 
