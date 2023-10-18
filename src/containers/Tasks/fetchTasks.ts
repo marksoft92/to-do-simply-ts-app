@@ -1,17 +1,17 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { ApiResponse } from "./types";
+import { ApiResponse } from "./tasks.types";
 
 export const fetchTasks = createAsyncThunk("tasks/fetch", async () => {
-    try {
-        const tasksData = localStorage.getItem("tasksData");
-        if (tasksData) {
-            const parseTasksData = JSON.parse(tasksData) as ApiResponse;
+  try {
+    const tasksData = localStorage.getItem("tasksData");
+    if (tasksData) {
+      const parseTasksData = JSON.parse(tasksData) as ApiResponse;
 
-            return parseTasksData;
-        } else {
-            return [];
-        }
-    } catch (error) {
-        throw error;
+      return parseTasksData;
+    } else {
+      return [];
     }
+  } catch (error) {
+    throw error;
+  }
 });
