@@ -29,6 +29,7 @@ const TasksList: React.FC = () => {
 
   return (
     <>
+      <h1 className="text-algin-center">To do App By: Dawid Bieńkowski</h1>
       <ConnectedList />
     </>
   );

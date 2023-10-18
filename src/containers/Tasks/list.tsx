@@ -5,12 +5,17 @@ import { ApiResponse } from "./tasks.types";
 
 const TasksList: React.FC<ApiResponse> = ({ tasks }) => {
   return (
-    <>
-      <NewTaskForm />
-      {tasks.map((task) => (
-        <TaskCart {...task} />
-      ))}
-    </>
+    <div className="flex justify-content-center align-items-start">
+      <div>
+        <NewTaskForm />
+      </div>
+
+      <div>
+        {tasks.map((task) => (
+          <TaskCart {...task} />
+        ))}
+      </div>
+    </div>
   );
 };
 

@@ -2,7 +2,7 @@
   --color: #ff2e71;
 }
 .accordion--2 {
-  --color: #11f900;
+  --color: #99cc66;
 }
 
 .accordion {
@@ -20,7 +20,7 @@
   height: 24px;
   font-size: 16px;
   border-radius: 12px 13px 0 0;
-  background: #fff;
+  background: #ffcb66;
   font-family: "Barlow", sans-serif;
 }
 .accordion__tab::before {
@@ -32,7 +32,7 @@
   width: 0;
   height: 0;
   border-top: solid 20px transparent;
-  border-left: solid 20px #fff;
+  border-left: solid 20px #ffcb66;
   border-right: solid 0 transparent;
   border-bottom: solid 0 transparent;
 }
@@ -46,9 +46,11 @@
   height: 100%;
   padding: 24px;
   box-sizing: border-box;
-  background: #fff;
+  background: #ffcb66;
   border-radius: 0 12px 12px 12px;
+  box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.3);
   cursor: pointer;
+  overflow: hidden;
 }
 .accordion__box {
   margin: 0;
@@ -189,7 +191,9 @@
   padding-right: 40px;
   color: #fff;
   border: none;
+  cursor: pointer;
   background: inherit;
+
 }
 .accordion__buttonText::before,
 .accordion__buttonText::after {
@@ -201,7 +205,7 @@
   margin: auto 0;
   width: 12px;
   height: 3px;
-  background: #fff;
+  background: #ffcb66;
 }
 .accordion__buttonText::before {
   transform: rotate(45deg);
@@ -545,7 +549,7 @@
   }
 }
 
-/* 本体には関係ないスタイル */
+
 .container {
   position: relative;
   width: 100%;
@@ -555,3 +559,44 @@
   align-items: center;
   background: #222;
 }
+
+.rubber_stamp {
+  font-family: 'Vollkorn', serif;
+  font-size: 39px;
+  line-height: 45px;
+  text-transform: uppercase;
+  font-weight: bold;
+margin-left: 4rem;
+  float: left;
+  padding: 10px 7px;
+  border-radius: 10px;
+  
+  opacity: 0.8;
+  -webkit-transform: rotate(-10deg);
+  -o-transform: rotate(-10deg);
+  -moz-transform: rotate(-10deg);
+  -ms-transform: rotate(-10deg);
+  position:absolute;
+  top:32%;
+
+  &.done {
+    color: #99cc66;
+  border: 7px solid #99cc66;
+  }
+  &.pending {
+    color: red;
+    border: 7px solid red;
+  }
+}
+.rubber_stamp::after {
+  position: absolute;
+  content: " ";
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  top: -10px;
+  left: -10px;
+  padding: 10px;
+  background: url(https://raw.github.com/domenicosolazzo/css3/master/img/noise.png) repeat;
+}
+

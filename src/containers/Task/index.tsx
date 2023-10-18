@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import DoneButton from "../../components/Buttons/DoneButton";
 import DeleteButton from "../../components/Buttons/DeleteButton";
 
-const TaskCart: React.FC<TaskCartProps> = ({ id, description, status }) => {
+const TaskCart: React.FC<TaskCartProps> = ({ id, description, status, category, icon }) => {
   const dispatch = useDispatch();
   const handleCompleted = () => {
     dispatch(markTaskAsCompleted(id));
@@ -22,15 +22,20 @@ const TaskCart: React.FC<TaskCartProps> = ({ id, description, status }) => {
   };
 
   return (
-    <div className="container-card">
-      <label className={`accordion accordion--${status ? "2" : "1"}`}>
+    <div className="container-card"
+
+    >
+      <label className={`accordion accordion--${status ? "2" : "1"}`}
+        onMouseEnter={() => setIsOpen(true)}
+        onMouseLeave={() => setIsOpen(false)}
+      >
         <input
           className="accordion__open"
           id={`open-${id}`}
           type="radio"
           name={`accordion-1`}
           checked={isOpen}
-          onChange={handleToggle}
+        // onBlur={handleToggle}
         />
         <input
           className="accordion__close"
@@ -38,14 +43,17 @@ const TaskCart: React.FC<TaskCartProps> = ({ id, description, status }) => {
           type="radio"
           name={`accordion-1`}
           checked={!isOpen}
-          onChange={handleToggle}
+        // onBlur={handleToggle}
         />
         <div className="accordion__tab">{status ? "DONE" : "CHECK!"}</div>
         <div className="accordion__wrapper">
           <dl className="accordion__box">
             <dt className="accordion__patition">
-              <span className="accordion__number"></span>
-              <span className="accordion__title">Kategoria</span>
+              <span className="accordion__number"><img src={icon} width={50} alt="" /></span>
+              <span className="accordion__title">{category}
+                {(!isOpen && !status) && <div className="rubber_stamp pending">Pending</div>}
+                {(!isOpen && status) && <div className="rubber_stamp done">Done</div>}
+              </span>
             </dt>
             <dd className="accordion__text">
               {description}

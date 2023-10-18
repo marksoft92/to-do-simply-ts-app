@@ -6,7 +6,7 @@ import TextArea from "../../../components/textarea";
 import AddButton from "../../../components/Buttons/AddButton";
 import categoriesData from "../../../categories.json";
 
-const defaultValues = { status: false, description: "" };
+const defaultValues = { status: false, description: "", category: "", icon: "" };
 
 const NewTaskForm = () => {
   const dispatch = useDispatch();
@@ -16,25 +16,40 @@ const NewTaskForm = () => {
     setValues({
       ...values,
       description: event.target.value,
+      category: findCategoryByKeywords(event.target.value).category,
+      icon: findCategoryByKeywords(event.target.value).icon
     });
 
-    console.log(findCategoryByKeywords(event.target.value));
+
   };
-
   const findCategoryByKeywords = (text: string) => {
+    const categories = categoriesData.kategorie;
     let selectedCategory = "inne"; // Domyślna kategoria "inne"
+    let selectedIcon = "https://cdn-icons-png.flaticon.com/512/6662/6662930.png"
+    let maxMatchCount = 0;
 
-    for (const category of categoriesData.kategorie) {
+    for (const category of categories) {
+      let matchCount = 0;
+
       for (const keyword of category.slowa_kluczowe) {
         if (text.toLowerCase().includes(keyword)) {
-          selectedCategory = category.nazwa;
-          break;
+          matchCount++;
         }
       }
-    }
 
-    return selectedCategory;
+      if (matchCount > maxMatchCount) {
+        maxMatchCount = matchCount;
+        selectedCategory = category.nazwa;
+        selectedIcon = category.icon
+      }
+    }
+    console.log(selectedCategory)
+    return { category: selectedCategory, icon: selectedIcon };
   };
+
+
+
+
 
   const handleAddTask = () => {
     dispatch(addTask({ ...values, id: nanoid() }));
