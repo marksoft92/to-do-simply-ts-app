@@ -308,7 +308,7 @@
   }
 }
 .accordion__open:checked ~ .accordion__wrapper .accordion__number {
-  animation: rotate 1s linear;
+  animation: rotate 2s linear;
   animation-fill-mode: forwards;
 }
 @keyframes rotate {
