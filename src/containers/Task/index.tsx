@@ -1,11 +1,18 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { TaskCartProps } from "./task.props";
 import { deleteTask, markTaskAsCompleted } from "../Tasks/tasksSlice";
 import { useDispatch } from "react-redux";
 import DoneButton from "../../components/Buttons/DoneButton";
 import DeleteButton from "../../components/Buttons/DeleteButton";
+import styles from "../../assets/styles/containers/Task/card.module.scss";
 
-const TaskCart: React.FC<TaskCartProps> = ({ id, description, status, category, icon }) => {
+const TaskCart: React.FC<TaskCartProps> = ({
+  id,
+  description,
+  status,
+  category,
+  icon,
+}) => {
   const dispatch = useDispatch();
   const handleCompleted = () => {
     dispatch(markTaskAsCompleted(id));
@@ -15,55 +22,69 @@ const TaskCart: React.FC<TaskCartProps> = ({ id, description, status, category, 
   };
 
   const [isOpen, setIsOpen] = useState(false);
-
-  const handleToggle = () => {
-    setIsOpen(!isOpen);
-    console.log(isOpen);
-  };
+  const isPending = !isOpen && !status;
+  const isDone = !isOpen && status;
+  const openRadioRef = useRef(null);
+  const closeRadioRef = useRef(null);
+  const commonAccordionClass = status
+    ? styles["accordion--2"]
+    : styles["accordion--1"];
 
   return (
-    <div className="container-card"
-
-    >
-      <label className={`accordion accordion--${status ? "2" : "1"}`}
+    <div className={styles["container-card"]}>
+      <label
+        className={`${styles.accordion} ${commonAccordionClass}`}
         onMouseEnter={() => setIsOpen(true)}
         onMouseLeave={() => setIsOpen(false)}
       >
         <input
-          className="accordion__open"
-          id={`open-${id}`}
+          className={styles["accordion__open"]}
+          ref={openRadioRef}
           type="radio"
           name={`accordion-1`}
           checked={isOpen}
-        // onBlur={handleToggle}
         />
         <input
-          className="accordion__close"
-          id={`close-${id}`}
+          className={styles["accordion__close"]}
+          ref={closeRadioRef}
           type="radio"
           name={`accordion-1`}
           checked={!isOpen}
-        // onBlur={handleToggle}
         />
-        <div className="accordion__tab">{status ? "DONE" : "CHECK!"}</div>
-        <div className="accordion__wrapper">
-          <dl className="accordion__box">
-            <dt className="accordion__patition">
-              <span className="accordion__number"><img src={icon} width={50} alt="" /></span>
-              <span className="accordion__title">{category}
-                {(!isOpen && !status) && <div className="rubber_stamp pending">Pending</div>}
-                {(!isOpen && status) && <div className="rubber_stamp done">Done</div>}
+        <div className={styles["accordion__tab"]}>
+          {status ? "DONE" : "CHECK!"}
+        </div>
+        <div className={styles["accordion__wrapper"]}>
+          <dl className={styles["accordion__box"]}>
+            <dt className={styles["accordion__patition"]}>
+              <span className={styles["accordion__number"]}>
+                <img src={icon} width={50} alt="" />
+              </span>
+              <span className={styles["accordion__title"]}>
+                {category}
+                {isPending && (
+                  <div
+                    className={`${styles["rubber_stamp"]} ${styles.pending} `}
+                  >
+                    Pending
+                  </div>
+                )}
+                {isDone && (
+                  <div className={`${styles["rubber_stamp"]} ${styles.done} `}>
+                    Done
+                  </div>
+                )}
               </span>
             </dt>
-            <dd className="accordion__text">
+            <dd className={styles["accordion__text"]}>
               {description}
               {!status && <DeleteButton onHandleClick={handleDelete} />}
             </dd>
           </dl>
         </div>
-        <label className="accordion__button">
+        <label className={styles["accordion__button"]}>
           {(!status && <DoneButton onHandleClick={handleCompleted} />) || (
-            <span className="accordion__buttonText"> Zakończone </span>
+            <span className={styles["accordion__buttonText"]}>Zakończone</span>
           )}
         </label>
       </label>

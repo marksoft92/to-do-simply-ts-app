@@ -1,3 +1,5 @@
+import categoriesData from "../categories.json";
+
 export function sortTasksByStatus(tasks) {
     return tasks.sort((a, b) => {
       if (a.status === true && b.status === false) {
@@ -16,4 +18,30 @@ export function sortTasksByStatus(tasks) {
       "tasksData",
       JSON.stringify(sortTasksByStatus(state.list))
     );
+  };
+
+  export const findCategoryByKeywords = (text) => {
+    const categories = categoriesData.kategorie;
+    let selectedCategory = "inne"; // Domyślna kategoria "inne"
+    let selectedIcon =
+      "https://cdn-icons-png.flaticon.com/512/6662/6662930.png";
+    let maxMatchCount = 0;
+
+    for (const category of categories) {
+      let matchCount = 0;
+
+      for (const keyword of category.slowa_kluczowe) {
+        if (text.toLowerCase().includes(keyword)) {
+          matchCount++;
+        }
+      }
+
+      if (matchCount > maxMatchCount) {
+        maxMatchCount = matchCount;
+        selectedCategory = category.nazwa;
+        selectedIcon = category.icon;
+      }
+    }
+    console.log(selectedCategory);
+    return { category: selectedCategory, icon: selectedIcon };
   };
