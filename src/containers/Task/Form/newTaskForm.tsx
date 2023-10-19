@@ -6,7 +6,6 @@ import TextArea from "../../../components/textarea";
 import AddButton from "../../../components/Buttons/AddButton";
 import { findCategoryByKeywords } from "../../../utils/helpers";
 
-
 const defaultValues = {
   status: false,
   description: "",
@@ -41,9 +40,7 @@ const NewTaskForm = () => {
 
   return (
     <>
-      {/* <KeywordHighlighter value={values.description} onHandleChange={handleTextChange} /> */}
       <TextArea value={values.description} onHandleChange={handleTextChange} />
-     
       <AddButton onHandleClick={handleAddTask} />
     </>
   );

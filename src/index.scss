@@ -6,13 +6,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  background: -webkit-linear-gradient(45deg, #a5f9b3, #66deef);
   background-blend-mode: normal, lighten, multiply, hard-light;
   font-family: "DM Sans", sans-serif;
 
   color: #3a405a;
   font-family: "Lato", sans-serif;
+}
+
+#root {
+  background: -webkit-linear-gradient(45deg, #a5f9b3, #66deef);
 }
 
 code {
@@ -60,3 +62,9 @@ h1 {
 }
 
 
+@media screen and (max-width: 460px) {
+  .form-container {
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+}
