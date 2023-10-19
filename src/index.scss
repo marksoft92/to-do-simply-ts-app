@@ -41,19 +41,35 @@ code {
 .flex {
   display: flex;
 }
+.flex-center {
+  align-items: center;
+  display: flex;
+}
 
 .justify-content-center {
   justify-content: center;
 }
 
-.align-items-start {
+.align-items-center {
   align-items: center;
+}
+.align-items-start {
+  align-items: start;
 }
 
 .text-algin-center {
   text-align: center;
 }
+.flex-direction-column {
+  flex-direction: column;
+}
 
 h1 {
   font-family: "Damion", cursive;
+}
+
+.editable-content {
+  border: 1px solid #000; /* Grubość i kolor kursora */
+  padding: 2px; /* Odstęp wokół kursora, aby go oddzielić od tekstu */
+  cursor: pointer;
 }

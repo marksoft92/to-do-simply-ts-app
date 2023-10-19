@@ -1,0 +1,26 @@
+.prose {
+  min-width: 50px;
+  border: 1px solid red;
+  min-height: 50px;
+  strong {
+    color: #222;
+    background: linear-gradient(
+        104deg,
+        #82ffad00 0.9%,
+        #82ffad 2.4%,
+        #82ffad80 5.8%,
+        #82ffad1a 93%,
+        #82ffadb3 96%,
+        #82ffff00 98%
+      ),
+      linear-gradient(183deg, #82ffad00, #82ffad4d 7.9%, #82ffad00 15%);
+    padding: 0.1em 0.4em;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    margin: 0;
+    border-radius: 7.5px;
+    text-shadow: -12px 12px 9.8px #82ffadb3, 21px -18.1px 7.3px #fff0,
+      -18.1px -27.3px 30px #fff;
+    border: none;
+  }
+}

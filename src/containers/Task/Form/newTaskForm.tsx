@@ -5,6 +5,7 @@ import { nanoid } from "@reduxjs/toolkit";
 import TextArea from "../../../components/textarea";
 import AddButton from "../../../components/Buttons/AddButton";
 import { findCategoryByKeywords } from "../../../utils/helpers";
+import KeywordHighlighter from "../../../components/KeywordHighlighter";
 
 const defaultValues = {
   status: false,
@@ -40,7 +41,8 @@ const NewTaskForm = () => {
 
   return (
     <>
-      <TextArea value={values.description} onHandleChange={handleTextChange} />
+      <KeywordHighlighter />
+      {/* <TextArea value={values.description} onHandleChange={handleTextChange} /> */}
       <AddButton onHandleClick={handleAddTask} />
     </>
   );

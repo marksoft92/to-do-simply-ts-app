@@ -5,8 +5,8 @@ import { ApiResponse } from "./tasks.types";
 
 const TasksList: React.FC<ApiResponse> = ({ tasks }) => {
   return (
-    <div className="flex justify-content-center align-items-start">
-      <div>
+    <div className="flex justify-content-center flex-direction-column">
+      <div className="flex-center justify-content-center ">
         <NewTaskForm />
       </div>
 
