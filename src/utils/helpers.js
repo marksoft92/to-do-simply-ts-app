@@ -39,9 +39,12 @@ export function sortTasksByStatus(tasks) {
       if (matchCount > maxMatchCount) {
         maxMatchCount = matchCount;
         selectedCategory = category.nazwa;
+        console.log(category.icon)
         selectedIcon = category.icon;
       }
     }
+    console.log('qweqweqweqw',selectedIcon)
     console.log(selectedCategory);
     return { category: selectedCategory, icon: selectedIcon };
   };
+  

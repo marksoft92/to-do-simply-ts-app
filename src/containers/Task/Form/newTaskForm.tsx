@@ -33,7 +33,7 @@ const NewTaskForm = () => {
       ...values,
       id: nanoid(),
     };
-
+console.log()
     dispatch(addTask(newTask));
     setValues(defaultValues);
   };
