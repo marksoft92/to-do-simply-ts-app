@@ -9,7 +9,7 @@ const TasksList: React.FC<ApiResponse> = ({ tasks }) => {
   console.log(emptyTaskList)
   return (
     <div className="flex justify-content-center flex-direction-column">
-      <div className="align-items-start-flex justify-content-center form-container">
+      <div className="flex align-items-center justify-content-center form-container">
         <NewTaskForm />
       </div>
 

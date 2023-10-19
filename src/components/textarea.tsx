@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../assets/styles/components/formControls/input.module.scss";
+import styles from "../assets/styles/components/formControls/textArea.module.scss"
 
 interface TextAreaProps {
   value: string;
@@ -7,12 +7,12 @@ interface TextAreaProps {
 }
 
 const TextArea: React.FC<TextAreaProps> = ({ value, onHandleChange }) => {
-  console.log(styles);
+  ;
   return (
-    <div className={`${styles["png-background"]} pos-relative`}>
+    <div className={` pos-relative`}>
       <textarea
         value={value}
-        className={`${styles.input} top20`}
+        className={`${styles["textarea"]} top20`}
         onChange={onHandleChange}
         placeholder="Wpisz zadanie do wykonania..."
         style={{
