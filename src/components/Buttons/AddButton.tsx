@@ -1,14 +1,15 @@
 import React from "react";
 import styles from "../../assets/styles/components/buttons/buttons.module.scss";
 interface AddButtonProps {
-  onHandleClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onHandleClick: (event: React.MouseEvent<HTMLButtonElement>) => void
+  isValid: boolean;
 }
 
-const AddButton: React.FC<AddButtonProps> = ({ onHandleClick }) => {
+const AddButton: React.FC<AddButtonProps> = ({ onHandleClick, isValid }) => {
   return (
     <>
       <div className={styles["container-button-marker"]}>
-        <button className={styles.button} onClick={onHandleClick}>
+        <button className={styles.button} onClick={onHandleClick} disabled={!isValid}>
           <div className={styles["button__line"]}></div>
           <div className={styles["button__line"]}></div>
           <span className={styles["button__text"]}>Dodaj</span>
