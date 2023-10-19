@@ -16,7 +16,7 @@ const defaultValues = {
 const NewTaskForm = () => {
   const dispatch = useDispatch();
   const [values, setValues] = useState(defaultValues);
-
+  const isValid = !!values.description
   const handleTextChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { category, icon } = findCategoryByKeywords(event.target.value);
     setValues({
@@ -33,7 +33,7 @@ const NewTaskForm = () => {
       ...values,
       id: nanoid(),
     };
-
+    console.log()
     dispatch(addTask(newTask));
     setValues(defaultValues);
   };
@@ -41,7 +41,7 @@ const NewTaskForm = () => {
   return (
     <>
       <TextArea value={values.description} onHandleChange={handleTextChange} />
-      <AddButton onHandleClick={handleAddTask} />
+      <AddButton onHandleClick={handleAddTask} isValid={isValid} />
     </>
   );
 };
