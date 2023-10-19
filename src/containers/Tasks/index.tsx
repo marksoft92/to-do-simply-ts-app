@@ -28,10 +28,9 @@ const TasksList: React.FC = () => {
   }, [dispatch]);
 
   return (
-    <>
-      <div id="kygo" className="text-algin-center stamp-text png">Dawid Bienkowski</div>
-      <ConnectedList />
-    </>
+
+    <ConnectedList />
+
   );
 };
 
