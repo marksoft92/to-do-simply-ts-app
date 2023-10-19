@@ -1,21 +1,37 @@
-@import "./assets/styles/TaskForm/index.scss";
-@import "./assets/styles/TaskForm/card.scss";
-@import "./assets/styles/components/buttons.scss";
-
 body {
-
+  height: 100vh;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
-	background-image: linear-gradient(62deg, rgba(1, 95, 183, 0.9732216701223994) 13%, rgba(255, 122, 151, 0.5) 4%),linear-gradient(44deg, rgba(0, 43, 99, 0.07922090238615942) 39%, rgba(242, 140, 143, 0.5) 18%),linear-gradient(118deg, rgba(84, 202, 242, 0.03152997265339608) 40%, rgba(247, 155, 187, 0.5) 54%),linear-gradient(58deg, rgba(90, 90, 237, 0.16144443572260592) 83%, rgba(249, 156, 142, 0.5) 23%); background-blend-mode: normal,lighten,multiply,hard-light;
-  font-family: 'DM Sans', sans-serif;
 
-	color: #3A405A;
-	font-family: 'Lato', sans-serif
+  background-image: linear-gradient(
+      62deg,
+      rgba(1, 95, 183, 0.9732216701223994) 13%,
+      rgba(255, 122, 151, 0.5) 4%
+    ),
+    linear-gradient(
+      44deg,
+      rgba(0, 43, 99, 0.07922090238615942) 39%,
+      rgba(242, 140, 143, 0.5) 18%
+    ),
+    linear-gradient(
+      118deg,
+      rgba(84, 202, 242, 0.03152997265339608) 40%,
+      rgba(247, 155, 187, 0.5) 54%
+    ),
+    linear-gradient(
+      58deg,
+      rgba(90, 90, 237, 0.16144443572260592) 83%,
+      rgba(249, 156, 142, 0.5) 23%
+    );
+  background-blend-mode: normal, lighten, multiply, hard-light;
+  font-family: "DM Sans", sans-serif;
+
+  color: #3a405a;
+  font-family: "Lato", sans-serif;
 }
 
 code {
@@ -25,19 +41,35 @@ code {
 .flex {
   display: flex;
 }
-
-.justify-content-center {
-  justify-content: center
+.flex-center {
+  align-items: center;
+  display: flex;
 }
 
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
 .align-items-start {
-  align-items: center
+  align-items: start;
 }
 
 .text-algin-center {
   text-align: center;
 }
+.flex-direction-column {
+  flex-direction: column;
+}
 
 h1 {
   font-family: "Damion", cursive;
+}
+
+.editable-content {
+  border: 1px solid #000; /* Grubość i kolor kursora */
+  padding: 2px; /* Odstęp wokół kursora, aby go oddzielić od tekstu */
+  cursor: pointer;
 }

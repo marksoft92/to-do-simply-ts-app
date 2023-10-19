@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "../assets/styles/components/formControls/textArea.module.scss";
 
 interface TextAreaProps {
   value: string;
@@ -6,10 +7,12 @@ interface TextAreaProps {
 }
 
 const TextArea: React.FC<TextAreaProps> = ({ value, onHandleChange }) => {
+  console.log(styles);
   return (
-    <textarea
+    <input
       value={value}
-      onChange={onHandleChange}
+      className={styles.prose}
+      //   onChange={onHandleChange}
       placeholder="Wpisz tekst..."
     />
   );

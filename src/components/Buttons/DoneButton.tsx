@@ -1,5 +1,5 @@
 import React from "react";
-
+import stylesCard from "../../assets/styles/containers/Task/card.module.scss";
 interface DoneButtonProps {
   onHandleClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
@@ -7,7 +7,10 @@ interface DoneButtonProps {
 const DoneButton: React.FC<DoneButtonProps> = ({ onHandleClick }) => {
   return (
     <>
-      <button className="accordion__buttonText" onClick={onHandleClick}>
+      <button
+        className={stylesCard["accordion__buttonText"]}
+        onClick={onHandleClick}
+      >
         Zakończ
       </button>
       ;
