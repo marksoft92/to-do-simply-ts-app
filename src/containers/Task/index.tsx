@@ -76,10 +76,13 @@ const TaskCart: React.FC<TaskCartProps> = ({
                 )}
               </span>
             </dt>
+
             <dd className={styles["accordion__text"]}>
               {description}
               {!status && <DeleteButton onHandleClick={handleDelete} />}
             </dd>
+
+
           </dl>
         </div>
         <label className={styles["accordion__button"]}>
