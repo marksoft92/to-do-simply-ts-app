@@ -13,11 +13,16 @@ const TasksList: React.FC<ApiResponse> = ({ tasks }) => {
         <NewTaskForm />
       </div>
 
-      {emptyTaskList && <div>
-        {tasks.map((task) => (
-          <TaskCart {...task} />
-        ))}
-      </div> || <Empty />}
+      {emptyTaskList ? (
+        <Empty />
+      ) : (
+        <div>
+          {tasks.map((task) => (
+            <TaskCart {...task} />
+          ))}
+        </div>
+      )}
+
     </div>
   );
 };
