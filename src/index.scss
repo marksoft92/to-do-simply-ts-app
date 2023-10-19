@@ -40,7 +40,10 @@ code {
 .align-items-start {
   align-items: start;
 }
-
+.align-items-start-flex {
+  align-items: flex-start;
+  display: flex;
+}
 .text-algin-center {
   text-align: center;
 }
@@ -62,6 +65,9 @@ h1 {
   position: relative;
 }
 
+.top20 {
+  top: 2rem
+}
 
 @media screen and (max-width: 460px) {
   .form-container {
