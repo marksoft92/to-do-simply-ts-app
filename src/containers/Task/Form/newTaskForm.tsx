@@ -43,6 +43,7 @@ const NewTaskForm = () => {
     <>
       {/* <KeywordHighlighter value={values.description} onHandleChange={handleTextChange} /> */}
       <TextArea value={values.description} onHandleChange={handleTextChange} />
+     
       <AddButton onHandleClick={handleAddTask} />
     </>
   );

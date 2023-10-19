@@ -79,3 +79,26 @@ h1 {
 }
 
 
+@import url('http://fonts.cdnfonts.com/css/magic-brush');
+#kygo {
+  font-family: 'Magic Brush', sans-serif;
+  font-size: 100px;
+  background: -webkit-linear-gradient(45deg, #a5f9b3, #66deef);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  animation: 3s reveal-text;
+}
+
+@keyframes reveal-text {
+  0% {
+    -webkit-clip-path: polygon(0 0, 10% 0, 10% 0, 0 0);
+clip-path: polygon(0 0, 10% 0, 10% 0, 0 0);
+  }
+100% {
+   -webkit-clip-path: polygon(0 100%, 10% 100%, 10% 0, 0 0);
+clip-path: polygon(0 100%, 10% 100%, 10% 0, 0 0);
+  }
+
+}

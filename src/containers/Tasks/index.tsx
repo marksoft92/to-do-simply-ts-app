@@ -29,7 +29,7 @@ const TasksList: React.FC = () => {
 
   return (
     <>
-      <h1 className="text-algin-center stamp-text png">To do App By: Dawid Bieńkowski</h1>
+      <div id="kygo" className="text-algin-center stamp-text png">Dawid Bienkowski</div>
       <ConnectedList />
     </>
   );
