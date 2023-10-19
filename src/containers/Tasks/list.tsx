@@ -2,19 +2,22 @@ import React from "react";
 import NewTaskForm from "../Task/Form/newTaskForm";
 import TaskCart from "../Task";
 import { ApiResponse } from "./tasks.types";
+import Empty from "../../components/Common/empty";
 
 const TasksList: React.FC<ApiResponse> = ({ tasks }) => {
+  const emptyTaskList = !!tasks.length
+  console.log(emptyTaskList)
   return (
     <div className="flex justify-content-center flex-direction-column">
-      <div className="flex-center justify-content-center form-container">
+      <div className="align-items-start-flex justify-content-center form-container">
         <NewTaskForm />
       </div>
 
-      <div>
+      {emptyTaskList && <div>
         {tasks.map((task) => (
           <TaskCart {...task} />
         ))}
-      </div>
+      </div> || <Empty />}
     </div>
   );
 };
