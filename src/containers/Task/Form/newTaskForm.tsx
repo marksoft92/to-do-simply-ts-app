@@ -5,7 +5,7 @@ import { nanoid } from "@reduxjs/toolkit";
 import TextArea from "../../../components/textarea";
 import AddButton from "../../../components/Buttons/AddButton";
 import { findCategoryByKeywords } from "../../../utils/helpers";
-import KeywordHighlighter from "../../../components/KeywordHighlighter";
+
 
 const defaultValues = {
   status: false,
@@ -18,7 +18,7 @@ const NewTaskForm = () => {
   const dispatch = useDispatch();
   const [values, setValues] = useState(defaultValues);
 
-  const handleTextChange = (event: ChangeEvent<HTMLTextAreaElement>) => {
+  const handleTextChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { category, icon } = findCategoryByKeywords(event.target.value);
     setValues({
       ...values,
@@ -41,8 +41,8 @@ const NewTaskForm = () => {
 
   return (
     <>
-      <KeywordHighlighter />
-      {/* <TextArea value={values.description} onHandleChange={handleTextChange} /> */}
+      {/* <KeywordHighlighter value={values.description} onHandleChange={handleTextChange} /> */}
+      <TextArea value={values.description} onHandleChange={handleTextChange} />
       <AddButton onHandleClick={handleAddTask} />
     </>
   );
