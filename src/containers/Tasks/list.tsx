@@ -13,7 +13,7 @@ const TasksList: React.FC<ApiResponse> = ({ tasks }) => {
         <NewTaskForm />
       </div>
 
-      {emptyTaskList ? (
+      {!emptyTaskList ? (
         <Empty />
       ) : (
         <div>
