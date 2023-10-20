@@ -18,7 +18,7 @@ const TasksList: FC<ApiResponse> = memo(({ tasks }) => {
       ) : (
         <>
           {tasks.map((task) => (
-            <TaskCart {...task} />
+            <TaskCart key={task.id} {...task} />
           ))}
         </>
       )}
