@@ -1,10 +1,10 @@
-import React from "react";
+import React, { FC, MouseEvent } from "react";
 import stylesCard from "../../assets/styles/containers/Task/card.module.scss";
 interface DoneButtonProps {
-  onHandleClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onHandleClick: (event: MouseEvent<HTMLButtonElement>) => void;
 }
 
-const DoneButton: React.FC<DoneButtonProps> = ({ onHandleClick }) => {
+const DoneButton: FC<DoneButtonProps> = ({ onHandleClick }) => {
   return (
     <>
       <button
@@ -13,7 +13,6 @@ const DoneButton: React.FC<DoneButtonProps> = ({ onHandleClick }) => {
       >
         Zakończ
       </button>
-      ;
     </>
   );
 };

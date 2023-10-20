@@ -1,11 +1,12 @@
-import React from "react";
+
+import React, { FC, MouseEvent } from "react";
 import styles from "../../assets/styles/components/buttons/buttons.module.scss";
 interface AddButtonProps {
-  onHandleClick: (event: React.MouseEvent<HTMLButtonElement>) => void
+  onHandleClick: (event: MouseEvent<HTMLButtonElement>) => void
   isValid: boolean;
 }
 
-const AddButton: React.FC<AddButtonProps> = ({ onHandleClick, isValid }) => {
+const AddButton: FC<AddButtonProps> = ({ onHandleClick, isValid }) => {
   return (
     <>
       <div className={styles["container-button-marker"]}>

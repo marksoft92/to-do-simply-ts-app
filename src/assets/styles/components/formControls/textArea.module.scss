@@ -38,6 +38,7 @@
   background: none;
   border: none;
   cursor: pointer;
+  resize: "vertical";
 &::before {
   content: "";
   top: -16px;
@@ -46,6 +47,7 @@
   height: 140px;
   transform: rotate(30deg);
   position: absolute;
+  
 }
 }
 
