@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import TextArea from "../../../components/FormControler/textarea";
+import InputForm from "../../../components/FormControler/input";
 import AddButton from "../../../components/Buttons/AddButton";
 import NewTaskFormLogic from "./newTaskForm.effect";
 
@@ -9,11 +9,10 @@ const NewTaskForm: FC = () => {
 
   return (
     <>
-      <TextArea
+      <InputForm
         value={values.description}
         onHandleChange={handleTextChange}
         placeholder="Wisz treść zadania do wykonania !"
-        className="top20"
       />
       <AddButton onHandleClick={handleAddTask} isValid={isValid} />
     </>

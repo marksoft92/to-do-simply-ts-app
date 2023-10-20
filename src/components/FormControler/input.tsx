@@ -1,5 +1,5 @@
-import React, { FC, ChangeEvent } from "react";
-import styles from "../../assets/styles/components/formControls/textArea.module.scss"
+import React, { FC, ChangeEvent, useState } from "react";
+import styles from "../../assets/styles/components/formControls/input.module.scss"
 interface TextAreaProps {
   value: string;
   onHandleChange: (event: ChangeEvent<HTMLInputElement>) => void;
@@ -13,10 +13,11 @@ const TextArea: FC<TextAreaProps> = ({ value, onHandleChange, placeholder, class
       <div className={styles.main}>
         <input
           value={value}
-          className={styles.input}
+          className={`${styles.input} ${className}`}
           onChange={onHandleChange}
+
         />
-        <span className={styles.place}>{placeholder}</span>
+        {!value && <span className={styles.place}>{placeholder}</span>}
         <span className={styles.bor}></span>
       </div>
     </div>

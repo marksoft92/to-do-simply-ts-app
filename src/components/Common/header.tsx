@@ -8,7 +8,7 @@ const linkedinUrl = "https://www.linkedin.com/in/dawid-bie%C5%84kowski/";
 const Header: FC = () => {
     return (
         <header className={`${styles["header"]} flex align-items-center justify-content-center`}>
-            <h1>Dawid Bieńkowski</h1>
+            <h1>Dawid Bienkowski</h1>
             <a
                 href={githubUrl}
                 target="_blank"
