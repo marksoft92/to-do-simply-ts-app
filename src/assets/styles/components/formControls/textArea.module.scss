@@ -53,3 +53,59 @@
 }
 }
 
+
+
+
+.main{
+  width: 300px;
+  height: 50px;
+  margin: 100px auto;
+  outline: none;
+  position: relative;
+  background: none;
+}
+
+.input{
+  position: relative;
+    z-index: 999;
+  width: 100%;
+  height: 100%;
+  border: none;
+  color: #333333;
+  padding-left: 10px;
+  font-family: tahoma;
+  font-size: 17px;
+  outline: none;
+  background: none;
+}
+
+  .main .place{
+  position: absolute;
+  background: none;
+  color: #AAA;
+  transition: 0.2s ease;
+  top: 14px;
+  left: 6px;
+  border-radius: 3px;
+  padding: 2px;
+}
+
+  .input:focus + .place{
+   top: -10px;
+   background: #ffcb66;
+   font-size: 14px;
+   color: #000;
+}
+
+  .main .bor{
+  display: block;
+  width: 0;
+  height: 3px;
+  background: #ffcb66;
+  margin: auto;
+  transition: 0.2s ease;
+}
+
+ .input:focus ~ .bor{
+  width: 100%;
+}
