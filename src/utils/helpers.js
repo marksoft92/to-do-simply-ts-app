@@ -30,7 +30,7 @@ export function sortTasksByStatus(tasks) {
     for (const category of categories) {
       let matchCount = 0;
 
-      for (const keyword of category.slowa_kluczowe) {
+      for (const keyword of category.keywords) {
         if (text.toLowerCase().includes(keyword)) {
           matchCount++;
         }
@@ -38,7 +38,7 @@ export function sortTasksByStatus(tasks) {
 
       if (matchCount > maxMatchCount) {
         maxMatchCount = matchCount;
-        selectedCategory = category.nazwa;
+        selectedCategory = category.name;
         console.log(category.icon)
         selectedIcon = category.icon;
       }

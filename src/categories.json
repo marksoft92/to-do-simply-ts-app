@@ -2,8 +2,8 @@
   "kategorie": [
     {
       "icon": "https://cdn-icons-png.flaticon.com/512/25/25694.png",
-      "nazwa": "Dom",
-      "slowa_kluczowe": [
+      "name": "Dom",
+      "keywords": [
         "kot",
         "pies",
         "kuchnia",
@@ -106,7 +106,6 @@
         "cebula",
         "bawić",
         "biegać",
-        "gotować",
         "aranżować",
         "odpoczywać",
         "stołować",
@@ -117,7 +116,6 @@
         "myć",
         "pić",
         "jeść",
-        "gotować",
         "pić",
         "gotować",
         "kroić",
@@ -157,27 +155,18 @@
         "włożyć",
         "osiąć",
         "myć",
-        "myć",
         "wlać",
         "nalać",
         "przygotować",
         "sypać",
         "kroić",
         "smazyć",
-        "gotować",
-        "dodać",
         "przyprawić solą",
         "przyprawić pieprzem",
         "przyprawić",
         "polewać",
         "dodać",
-        "dodać",
-        "gotować",
-        "gotować",
-        "dodać",
-        "gotować",
         "jeść",
-        "gotować",
         "gotować",
         "kroić",
         "kota", "psa", "kuchni", "mebli", "sofy", "stołu", "krzesła", "kanapy", "lodówki", "mikrofalówki", "naczyń", "talerza", "sztućców", "garnka", "kubka", "patelni", "deski do krojenia", "wody", "gazety", "telewizora", "fotela", "dywanu", "koca", "łóżka", "poduszki", "kołdry", "biurka", "krzesła biurowego", "monitora", "laptopa", "komputera", "myszki", "klawiatury", "lampy", "rośliny doniczkowej", "kwiatów", "drzwi", "okna", "żaluzji", "obrazu", "zegara ściennej", "lustrow", "wazonu", "świecznika", "koca na kanapę", "półki", "książek", "komody", "szafy", "butów", "kapci", "torby zakupowej", "parasola", "kluczy do mieszkania", "wieszaka na ubrania", "parasolki", "suszarce do włosów", "odkurzacza", "mopa", "wiadra", "szuflady", "kosza na śmieci", "worków na śmieci", "dozownika mydła", "ręcznika", "papieru toaletowego", "szamponu", "mydła", "pasty do zębów", "szczoteczki do zębów", "pasty do butów", "grzebienia", "szczotki do włosów", "proszku do prania", "płynu do naczyń", "ścierki kuchennej", "płynu do podłóg", "gąbki do mycia naczyń", "kawy", "herbaty", "cukru", "mleka", "chleba", "dżemu", "jajek", "masła", "sera", "szynki", "ogórków", "pomidorów", "papryki", "soli", "pieprzu", "oliwy", "ketchupu", "musztardy", "makaronu", "ryżu", "ziemniaków", "cebuli"
@@ -186,8 +175,8 @@
     },
     {
       "icon":"https://cdn-icons-png.flaticon.com/512/2910/2910791.png",
-      "nazwa": "Praca",
-      "slowa_kluczowe": [
+      "name": "Praca",
+      "keywords": [
         "biurko",
         "komputer",
         "raport",
@@ -277,8 +266,8 @@
     },
     {
       "icon":"https://cdn-icons-png.flaticon.com/512/999/999735.png ",
-      "nazwa": "Szkoła",
-      "slowa_kluczowe": [
+      "name": "Szkoła",
+      "keywords": [
         "nauczyciel",
         "uczennica",
         "lekcja",
@@ -358,8 +347,8 @@
     },
     {
       "icon":"https://cdn-icons-png.flaticon.com/512/12522/12522231.png",
-      "nazwa": "Znajomi",
-      "slowa_kluczowe": [
+      "name": "Znajomi",
+      "keywords": [
         "przyjaźń",
         "znajomość",
         "kolega",
@@ -429,8 +418,8 @@
     },
     {
       "icon": "https://cdn-icons-png.flaticon.com/512/763/763965.png",
-      "nazwa": "Sport",
-      "slowa_kluczowe": [
+      "name": "Sport",
+      "keywords": [
         "piłka",
         "siatkówka",
         "bieganie",
@@ -478,8 +467,8 @@
     },
     {
       "icon":"https://cdn-icons-png.flaticon.com/512/723/723955.png",
-      "nazwa": "Podróże",
-      "slowa_kluczowe": [
+      "name": "Podróże",
+      "keywords": [
         "wakacje",
         "lotnisko",
         "hotel",
@@ -527,8 +516,8 @@
     },
     { 
       "icon":"https://cdn-icons-png.flaticon.com/512/2607/2607254.png",
-      "nazwa": "Kuchnia",
-      "slowa_kluczowe": [
+      "name": "Kuchnia",
+      "keywords": [
         "gotowanie",
         "przepisy",
         "deser",
@@ -583,8 +572,8 @@
     },
     {
       "icon":"https://cdn-icons-png.flaticon.com/512/11195/11195074.png",
-      "nazwa": "Motoryzacja",
-      "slowa_kluczowe": [
+      "name": "Motoryzacja",
+      "keywords": [
         "samochód",
         "motocykl",
         "autostrada",
