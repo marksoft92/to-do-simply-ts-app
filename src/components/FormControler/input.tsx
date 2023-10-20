@@ -1,4 +1,4 @@
-import React, { FC, ChangeEvent, useState } from "react";
+import React, { FC, ChangeEvent } from "react";
 import styles from "../../assets/styles/components/formControls/input.module.scss"
 interface TextAreaProps {
   value: string;
