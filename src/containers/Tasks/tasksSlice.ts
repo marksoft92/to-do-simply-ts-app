@@ -24,7 +24,6 @@ export const tasksSlice = createSlice({
 
       if (taskToMark) {
         taskToMark.status = true;
-        console.log(state);
         updateLocalStorage(state);
       }
     },
