@@ -28,9 +28,7 @@ const TasksList: React.FC = () => {
   }, [dispatch]);
 
   return (
-
     <ConnectedList />
-
   );
 };
 

@@ -1,10 +1,10 @@
-import React from "react";
+import React, { FC, MouseEvent } from "react";
 import { DeleteOutlined } from "@ant-design/icons"
 interface DeleteButtonProps {
-  onHandleClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  onHandleClick: (event: MouseEvent<HTMLButtonElement>) => void;
 }
 
-const DeleteButton: React.FC<DeleteButtonProps> = ({ onHandleClick }) => {
+const DeleteButton: FC<DeleteButtonProps> = ({ onHandleClick }) => {
   return <button onClick={onHandleClick}><DeleteOutlined />Usuń</button>;
 };
 
