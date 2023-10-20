@@ -15,7 +15,7 @@ const NewTaskFormLogic = () => {
     const dispatch = useDispatch();
     const [values, setValues] = useState(defaultValues);
 
-    const handleTextChange = useCallback((event: ChangeEvent<HTMLTextAreaElement>) => {
+    const handleTextChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
         const { category, icon } = findCategoryByKeywords(event.target.value);
         setValues({
             ...values,

@@ -2,7 +2,7 @@ import React, { FC, ChangeEvent } from "react";
 import styles from "../../assets/styles/components/formControls/textArea.module.scss"
 interface TextAreaProps {
   value: string;
-  onHandleChange: (event: ChangeEvent<HTMLTextAreaElement>) => void;
+  onHandleChange: (event: ChangeEvent<HTMLInputElement>) => void;
   className?: string;
   placeholder?: string;
 }
@@ -10,12 +10,15 @@ interface TextAreaProps {
 const TextArea: FC<TextAreaProps> = ({ value, onHandleChange, placeholder, className }) => {
   return (
     <div className={`pos-relative`}>
-      <textarea
-        value={value}
-        className={`${styles["textarea"]} ${className}`}
-        onChange={onHandleChange}
-        placeholder={placeholder}
-      ></textarea>
+      <div className={styles.main}>
+        <input
+          value={value}
+          className={styles.input}
+          onChange={onHandleChange}
+        />
+        <span className={styles.place}>{placeholder}</span>
+        <span className={styles.bor}></span>
+      </div>
     </div>
   );
 };
