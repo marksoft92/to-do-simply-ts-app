@@ -39,7 +39,6 @@ export function sortTasksByStatus(tasks) {
       if (matchCount > maxMatchCount) {
         maxMatchCount = matchCount;
         selectedCategory = category.name;
-        console.log(category.icon)
         selectedIcon = category.icon;
       }
     }
