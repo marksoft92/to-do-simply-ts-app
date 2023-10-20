@@ -12,7 +12,7 @@ const NewTaskForm: FC = () => {
       <InputForm
         value={values.description}
         onHandleChange={handleTextChange}
-        placeholder="Wisz treść zadania do wykonania !"
+        placeholder="Wpisz treść zadania do wykonania !"
       />
       <AddButton onHandleClick={handleAddTask} isValid={isValid} />
     </>
