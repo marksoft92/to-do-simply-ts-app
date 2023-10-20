@@ -22,7 +22,7 @@ export function sortTasksByStatus(tasks) {
 
   export const findCategoryByKeywords = (text) => {
     const categories = categoriesData.kategorie;
-    let selectedCategory = "inne"; // Domyślna kategoria "inne"
+    let selectedCategory = "inne"; 
     let selectedIcon =
       "https://cdn-icons-png.flaticon.com/512/6662/6662930.png";
     let maxMatchCount = 0;
@@ -43,8 +43,6 @@ export function sortTasksByStatus(tasks) {
         selectedIcon = category.icon;
       }
     }
-    console.log('qweqweqweqw',selectedIcon)
-    console.log(selectedCategory);
     return { category: selectedCategory, icon: selectedIcon };
   };
   
