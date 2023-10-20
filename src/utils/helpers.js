@@ -22,7 +22,7 @@ export function sortTasksByStatus(tasks) {
 
   export const findCategoryByKeywords = (text) => {
     const categories = categoriesData.kategorie;
-    let selectedCategory = "inne"; 
+    let selectedCategory = "Inne"; 
     let selectedIcon =
       "https://cdn-icons-png.flaticon.com/512/6662/6662930.png";
     let maxMatchCount = 0;
